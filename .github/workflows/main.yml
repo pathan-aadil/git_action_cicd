@@ -24,5 +24,5 @@ jobs:
           run: |
               ssh -o "StrictHostKeyChecking=no" -i /tmp/ssh_key ubuntu@13.51.198.94 "
               kubectl delete deployment my-deployment
-              kubectl apply -f /home/ubuntu/my-deployment.yml
+              kubectl apply -f /home/ubuntu/deploy1.yml
               "
