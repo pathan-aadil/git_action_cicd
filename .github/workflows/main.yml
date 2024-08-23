@@ -2,16 +2,16 @@ name: github action cicd pipeline
 on:
     push:
         beanches:
-        - main
+            - main
 jobs:
     cicdtest:
         run-on: ubuntu-latest
         steps:
-        - name: checkout code
-          uses: actions/chekout@v2
-        - name: Build and Push docker image
-          run: |
+            - name: Checkout code
+            uses: actions/chekout@v2
+            - name: Build and Push docker image
+            run: |
             docker build -t myimage .
             echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
             docker tag myimage aadil1142/myimage
-            docker push aadil1142/myimage
+            docker push aadil1142/myimage 
